@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageInput = document.getElementById('image-input');
     const resultOutput = document.getElementById('result-output');
     const resultSection = document.getElementById('result-section');
-
     const heroSection = document.getElementById('hero-section');
     const tabsSection = document.getElementById('tabs');
     const startBtn = document.getElementById('start-btn');
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function getRandomProbability() {
-        return Math.floor(Math.random() * 101); // 0 to 100%
+        return Math.floor(Math.random() * 101);
     }
 
     function analyzeText(text) {
@@ -63,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function scrollToResult() {
         resultSection.scrollIntoView({ behavior: 'smooth' });
     }
-
     startBtn.addEventListener('click', () => {
         heroSection.style.display = 'none';
         tabsSection.style.display = 'block';
@@ -88,8 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resultSection.style.display = 'none';
         });
     });
-
-    analyzeTextBtn.addEventListener('click', () => {
+   analyzeTextBtn.addEventListener('click', () => {
         const text = textInput.value;
         const spinner = analyzeTextBtn.querySelector('.loading-spinner');
         spinner.style.display = 'inline-block';
@@ -105,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollToResult(); // Scroll after showing result
         }, 1500);
     });
-
     analyzeVideoBtn.addEventListener('click', () => {
         const url = videoUrlInput.value;
         const spinner = analyzeVideoBtn.querySelector('.loading-spinner');
@@ -122,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
             resultSection.style.display = 'block';
         }, 1500);
     });
-
     analyzeImageBtn.addEventListener('click', () => {
         const file = imageInput.files[0];
         const spinner = analyzeImageBtn.querySelector('.loading-spinner');
@@ -141,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function addEmojiToResult(resultText) {
-        // Simple logic to add emoji based on confidence or probability keywords
+       
         let emoji = '❓';
         if (resultText.includes('High')) {
             emoji = '🔥';
@@ -152,4 +147,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return `<span class="result-emoji">${emoji}</span>${resultText.replace(/\n/g, '<br>')}`;
     }
-});
+}); 
