@@ -1,4 +1,4 @@
-# VerifyAI 🛡️  
+# VerifyAI 🛡️
 
 > **Trust, but Verify.**
 > An AI-powered platform for detecting deepfakes, verifying news credibility, and analyzing media integrity.
